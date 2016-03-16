@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Androidgotest.iml" filepath="$PROJECT_DIR$/Androidgotest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android-go-vs-c.iml" filepath="$PROJECT_DIR$/android-go-vs-c.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/clibrary/clibrary.iml" filepath="$PROJECT_DIR$/clibrary/clibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/golibrary/golibrary.iml" filepath="$PROJECT_DIR$/golibrary/golibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/golibrary/golibrary.iml" filepath="$PROJECT_DIR$/golibrary/golibrary.iml" />
     </modules>
   </component>

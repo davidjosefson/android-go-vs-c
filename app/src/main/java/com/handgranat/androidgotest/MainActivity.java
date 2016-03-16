@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         long javaSum = 0;
 
         int cCalcResult = 0;
+        long goCalcResult = 0;
+        int javaCalcResult = 0;
 
         // Skapa en ny instans av C-biblioteket
         MainNative mainnative = new MainNative();
@@ -60,17 +62,17 @@ public class MainActivity extends AppCompatActivity {
             numRekurs = 0;
             // Anropar Go-biblioteket
             long goStartTime = System.nanoTime();
-            long goCalcResult = Golib.IntegerFibonacci(nlong);
+            goCalcResult = Golib.IntegerMultiplication(nlong);
             goSum += System.nanoTime() - goStartTime;
 
             // Anropar C-biblioteket
             long cStartTime = System.nanoTime();
-            cCalcResult = mainnative.callIntegerFibonacci(nlong);
+            cCalcResult = mainnative.callIntegerMultiplication(nlong);
             cSum += System.nanoTime() - cStartTime;
 
             // Anropar Java-metoden
             long javaStartTime = System.nanoTime();
-            int javaCalcResult = integerFibonacci(nint);
+            javaCalcResult = IntegerMultiplication(nint);
             javaSum += System.nanoTime() - javaStartTime;
         }
 
@@ -102,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
         copyToClip(javaRes, goRes, cRes, nint);
 
 
-        javaResult.setText(String.valueOf(formatter.format(numRekurs)));
-
+        javaResult.setText(String.valueOf(goCalcResult));
+        goResult.setText(String.valueOf(javaCalcResult));
         cResult.setText(String.valueOf(cCalcResult));
 
 
@@ -133,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
     public void executeAlgorithm4(int numruns, int n) {
         int nint = n;
         long nlong = n;
+        double ndouble = (double) n;
 
         long goSum = 0;
         long cSum = 0;
@@ -150,17 +153,17 @@ public class MainActivity extends AppCompatActivity {
             MainNative mainnative = new MainNative();
             // Anropar Go-biblioteket
             long goStartTime = System.nanoTime();
-            goCalcResult = Golib.FloatFibonacci(nlong);
+            goCalcResult = Golib.FloatMultiplication(ndouble);
             goSum += System.nanoTime() - goStartTime;
 
             // Anropar C-biblioteket
             long cStartTime = System.nanoTime();
-            cCalcResult = mainnative.callFloatFibonacci(nlong);
+            cCalcResult = mainnative.callFloatMultiplication(ndouble);
             cSum += System.nanoTime() - cStartTime;
 
             // Anropar Java-metoden
             long javaStartTime = System.nanoTime();
-            javaCalcResult = FloatFibonacci(nint);
+            javaCalcResult = FloatMultiplication(ndouble);
             javaSum += System.nanoTime() - javaStartTime;
         }
 
@@ -189,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
         cResult.setText(String.valueOf(cCalcResult));
         javaResult.setText(String.valueOf(javaCalcResult));
 
-        javaResult.setText(String.valueOf(formatter.format(numRekurs)));
+//        javaResult.setText(String.valueOf(formatter.format(numRekurs)));
 
     }
 
@@ -340,7 +343,7 @@ public class MainActivity extends AppCompatActivity {
         String csvResult = java + ", " + go + ", " + c;
 //        ClipboardManager clipMan = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 //        android.content.ClipData clip = android.content.ClipData.newPlainText("tag",csvResult);
-        Log.d("RESULTAT", "NY KÖRNING \n" +  input + "\n" +java + "\n" + go + "\n" + c);
+        Log.d("RESULTAT", "NY KÖRNING \n" + input + "\n" + java + "\n" + go + "\n" + c);
 //        clipMan.setPrimaryClip(clip);
     }
 
@@ -366,15 +369,28 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private int javaHeltal(int n) {
+    private int IntegerMultiplication(int n) {
         int result = 0;
         int i;
         int j;
 
         for (i = 0; i < n; i = i + 1) {
             for (j = 0; j < n; j = j + 1) {
-//                result = j*1*2*3*4*5*6*7*8*9*10*11*12*13*14*15*16*17*18*19*20;
-                result = (j*1*2*3*4*5*6)+i;
+                result = j*(j+2) - j*(j+1) + i;
+            }
+        }
+
+        return result;
+    }
+
+    private double FloatMultiplication(double n) {
+        double result = 0;
+        double i;
+        double j;
+
+        for (i = 0; i < n; i = i + 1) {
+            for (j = 0; j < n; j = j + 1) {
+                result = j*(j+1.123456789) - j*(j+0.987654321) + i;
             }
         }
 
@@ -382,12 +398,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private int integerFibonacci(int n) {
-        if(n < 2) {
-            return 1;
-        } else {
-            numRekurs++;
-            return (integerFibonacci(n - 1) * integerFibonacci(n - 2));
+        if(n == 2) {
+            return 2;
         }
+        if(n == 1) {
+            return 1;
+        }
+
+        numRekurs++;
+        return  integerFibonacci(n - 1) * integerFibonacci(n - 2);
     }
 
     private int CreateArray(int n){
@@ -412,7 +431,6 @@ public class MainActivity extends AppCompatActivity {
             for (int j = 1; j < (n - i); j++) {
                 if (array[j-1] > array[j]) {
                     temp = array[j-1];
-                    numRekurs++;
                     array[j-1] = array[j];
                     array[j] = temp;
                 }
@@ -435,6 +453,8 @@ public class MainActivity extends AppCompatActivity {
             return (0.99999999999998 * FloatFibonacci(n - 1.0));
         }
     }
+
+
 
 //    private int MemoryAllocation(int n){
 ////        int size = 4000*n;

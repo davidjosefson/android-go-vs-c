@@ -4,8 +4,8 @@ public class MainNative {
 
     private static final String TAG = "MainNative";
 
-    private native int integerFibonacci(long n);
-    private native double floatFibonacci(long n);
+    private native int integerMultiplication(long n);
+    private native double floatMultiplication(double n);
     private native int createArray(long n);
     private native int bubbleSort(long n);
 //    private native int memoryAllocation(long n);
@@ -19,11 +19,11 @@ public class MainNative {
 	//TODO implement a useful constructor
     }
 
-    public int callIntegerFibonacci(long n) {
-	    return integerFibonacci(n);
+    public int callIntegerMultiplication(long n) {
+	    return integerMultiplication(n);
     }
-    public double callFloatFibonacci(long n) {
-	    return floatFibonacci(n);
+    public double callFloatMultiplication(double n) {
+	    return floatMultiplication(n);
     }
     public int callCreateArray(long n) {
 	    return createArray(n);

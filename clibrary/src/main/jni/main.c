@@ -7,16 +7,38 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-long IntegerRecurse(long m);
 double FloatRecurse(double m);
 
-jint Java_com_handgranat_clibrary_MainNative_integerFibonacci(JNIEnv* env, jobject thiz, jlong n) {
-    return IntegerRecurse(n);
+jlong Java_com_handgranat_clibrary_MainNative_integerMultiplication(JNIEnv* env, jobject thiz, jlong n) {
+    long result = 0;
+    long i;
+    long j;
+
+    for (i = 0; i < n; i = i + 1) {
+        for (j = 0; j < n; j = j + 1) {
+            result = j*(j+2) - j*(j+1) + i;
+        }
+    }
+
+    return result;
+}
+jdouble Java_com_handgranat_clibrary_MainNative_floatMultiplication(JNIEnv* env, jobject thiz, jdouble n) {
+    double result = 0;
+    double i;
+    double j;
+
+    for (i = 0; i < n; i = i + 1) {
+        for (j = 0; j < n; j = j + 1) {
+            result = j*(j+1.123456789) - j*(j+0.987654321) + i;
+        }
+    }
+
+    return result;
 }
 
-jdouble Java_com_handgranat_clibrary_MainNative_floatFibonacci(JNIEnv* env, jobject thiz, jlong n) {
-    return FloatRecurse(n);
-}
+//jdouble Java_com_handgranat_clibrary_MainNative_floatFibonacci(JNIEnv* env, jobject thiz, jlong n) {
+//    return FloatRecurse(n);
+//}
 
 jdouble Java_com_handgranat_clibrary_MainNative_floatPi(JNIEnv* env, jobject thiz, jint n) {
     double sum = 0.1;
@@ -95,13 +117,15 @@ jint Java_com_handgranat_clibrary_MainNative_bubbleSort(JNIEnv* env, jobject thi
 ////    return 1;
 //}
 
-long IntegerRecurse(long m){
-    if(m < 2){
-        return 1;
-    } else {
-        return IntegerRecurse(m-1) * IntegerRecurse(m-2);
-    }
-}
+
+
+//long IntegerRecurse(long m){
+//    if(m < 2){
+//        return 1;
+//    } else {
+//        return IntegerRecurse(m-1) * IntegerRecurse(m-2);
+//    }
+//}
 
 double FloatRecurse(double m){
 //    if(m < 2.123456789){
