@@ -8,7 +8,6 @@ public class MainNative {
     private native double floatMultiplication(double n);
     private native int createArray(long n);
     private native int bubbleSort(long n);
-//    private native int memoryAllocation(long n);
 
     static {
 	//NOTE: this comes from the module name that we will define in our build.gradle
@@ -31,7 +30,4 @@ public class MainNative {
     public int callBubbleSort(long n) {
 	    return bubbleSort(n);
     }
-//    public int callMemoryAllocation(long n) {
-//	    return memoryAllocation(n);
-//    }
 }

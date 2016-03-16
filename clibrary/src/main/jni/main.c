@@ -7,8 +7,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-double FloatRecurse(double m);
-
 jlong Java_com_handgranat_clibrary_MainNative_integerMultiplication(JNIEnv* env, jobject thiz, jlong n) {
     long result = 0;
     long i;
@@ -22,6 +20,7 @@ jlong Java_com_handgranat_clibrary_MainNative_integerMultiplication(JNIEnv* env,
 
     return result;
 }
+
 jdouble Java_com_handgranat_clibrary_MainNative_floatMultiplication(JNIEnv* env, jobject thiz, jdouble n) {
     double result = 0;
     double i;
@@ -35,10 +34,6 @@ jdouble Java_com_handgranat_clibrary_MainNative_floatMultiplication(JNIEnv* env,
 
     return result;
 }
-
-//jdouble Java_com_handgranat_clibrary_MainNative_floatFibonacci(JNIEnv* env, jobject thiz, jlong n) {
-//    return FloatRecurse(n);
-//}
 
 jdouble Java_com_handgranat_clibrary_MainNative_floatPi(JNIEnv* env, jobject thiz, jint n) {
     double sum = 0.1;
@@ -90,93 +85,8 @@ jint Java_com_handgranat_clibrary_MainNative_bubbleSort(JNIEnv* env, jobject thi
 
     return array[0];
 }
-//jint Java_com_handgranat_clibrary_MainNative_memoryAllocation(JNIEnv* env, jobject thiz, jlong n) {
-//    long size = 4000*n;
-////    char *description = calloc(size , sizeof *description);
-////    description[9]=8;
-////    int length = sizeof(description[2]);
-//////    free(description);
-////    int *p = (int*) malloc(size * sizeof *p);
-////    memset(p, 1, size);
-//
-//
-//
-//    char array[size];
-//
-//    for (long i = 0; i < n; ++i) {
-//        array[i] = 127;
-//    }
-//
-////    if(p) {return p[10];}
-//
-//    return array[n-1];
-//
-////    exit(0);
-//
-////    return ((size_t *)p)[-1];
-////    return 1;
-//}
-
-
-
-//long IntegerRecurse(long m){
-//    if(m < 2){
-//        return 1;
-//    } else {
-//        return IntegerRecurse(m-1) * IntegerRecurse(m-2);
-//    }
-//}
-
-double FloatRecurse(double m){
-//    if(m < 2.123456789){
-//        return 1;
-//    } else {
-//        return FloatRecurse(m-1.123456789) * FloatRecurse(m-2.123456789);
-//    }
-    if(m < 2.0){
-        return 1.0;
-    } else {
-        return (0.987654321 * FloatRecurse(m-1.0));
-    }
-}
 
 // Required for the default JNI implementation
 jint JNI_OnLoad(JavaVM* vm, void* reserved) {
     return JNI_VERSION_1_6;
 }
-
-
-
-//const char* dev_name = (*env)->GetStringUTFChars(env, deviceName, 0);
-//(*env)->ReleaseStringUTFChars(env, deviceName, dev_name);
-
-//    result := 0
-//
-//    for  i := 0; i < n; i++ {
-//        result += n*i;
-//    }
-//
-//    return result
-
-//    int result;
-//    int i;
-//
-//    for (i = 0; i < n; i = i + 1) {
-//        result = n * i;
-//    }
-//
-//    return result;
-
-//    long result = 0;
-//    long i;
-//    long j;
-//
-//    for (i = 0; i < n; i = i + 1) {
-//        for (j = 0; j < n; j = j + 1) {
-////            result = j*1*2*3*4*5*6;
-//            result = (j*1*2*3*4*5*6)+i;
-//        }
-//    }
-//    return result;
-//}
-
