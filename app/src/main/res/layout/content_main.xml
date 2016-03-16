@@ -44,7 +44,7 @@
                     android:id="@+id/numRuns1"
                     android:layout_marginTop="10dp"
                     android:inputType="number"
-                    android:text="100"
+                    android:text="1000"
                     />
                 <EditText
                     android:layout_width="wrap_content"
@@ -52,7 +52,7 @@
                     android:id="@+id/n1"
                     android:layout_marginTop="10dp"
                     android:inputType="number"
-                    android:text="36"
+                    android:text="2"
                     />
                 <Button
                     android:layout_width="wrap_content"
@@ -187,6 +187,172 @@
                 </LinearLayout>
             </LinearLayout>
 
+            //Float-Fibonacci-knappar
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FloatFibonacci"
+                    android:textSize="20dp"
+                    android:textIsSelectable="false"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:textAlignment="center"
+                    android:minWidth="60dp" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/numRuns4"
+                    android:layout_marginTop="10dp"
+                    android:inputType="number"
+                    android:text="1000"
+                    />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/n4"
+                    android:layout_marginTop="10dp"
+                    android:inputType="number"
+                    android:text="2"
+                    />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calc"
+                    android:id="@+id/button4"
+                    android:layout_marginTop="10dp"
+                    android:onClick="onClickCalcBtn4"
+                    />
+
+            </LinearLayout>
+
+            //Float-Fibonacci-resultat
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Java"
+                        android:textSize="12dp"
+                        android:textIsSelectable="false"
+                        android:layout_marginLeft="30dp"
+                        android:textAlignment="center"
+                        android:minWidth="60dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calc result"
+                        android:id="@+id/javaResult4"
+                        android:textSize="12dp"
+                        android:textIsSelectable="false"
+                        android:minWidth="100dp"
+                        android:textAlignment="textEnd"
+                        android:layout_marginLeft="30dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Time result"
+                        android:textSize="12dp"
+                        android:id="@+id/javaTimeResult4"
+                        android:minWidth="100dp"
+                        android:textAlignment="textEnd"
+                        android:layout_marginLeft="30dp"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Go"
+                        android:textSize="12dp"
+                        android:textIsSelectable="false"
+                        android:layout_marginLeft="30dp"
+                        android:textAlignment="center"
+                        android:minWidth="60dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calc result"
+                        android:id="@+id/goResult4"
+                        android:textSize="12dp"
+                        android:textIsSelectable="false"
+                        android:minWidth="100dp"
+                        android:textAlignment="textEnd"
+                        android:layout_marginLeft="30dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Time result"
+                        android:textSize="12dp"
+                        android:id="@+id/goTimeResult4"
+                        android:minWidth="100dp"
+                        android:textAlignment="textEnd"
+                        android:layout_marginLeft="30dp"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="C"
+                        android:textSize="12dp"
+                        android:textAlignment="center"
+                        android:textIsSelectable="false"
+                        android:layout_marginLeft="30dp"
+                        android:minWidth="60dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calc result"
+                        android:id="@+id/cResult4"
+                        android:textSize="12dp"
+                        android:textIsSelectable="false"
+                        android:minWidth="100dp"
+                        android:textAlignment="textEnd"
+                        android:layout_marginLeft="30dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="Time result"
+                        android:textSize="12dp"
+                        android:id="@+id/cTimeResult4"
+                        android:minWidth="100dp"
+                        android:textAlignment="textEnd"
+                        android:layout_marginLeft="30dp"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
             //Skapa en array knappar
             <LinearLayout
                 android:orientation="horizontal"
@@ -210,7 +376,7 @@
                     android:id="@+id/numRuns2"
                     android:layout_marginTop="10dp"
                     android:inputType="number"
-                    android:text="100"
+                    android:text="10000"
                     />
                 <EditText
                     android:layout_width="wrap_content"
@@ -218,7 +384,7 @@
                     android:id="@+id/n2"
                     android:layout_marginTop="10dp"
                     android:inputType="number"
-                    android:text="36"
+                    android:text="2000"
                     />
                 <Button
                     android:layout_width="wrap_content"
@@ -384,7 +550,7 @@
                     android:id="@+id/n3"
                     android:layout_marginTop="10dp"
                     android:inputType="number"
-                    android:text="36"
+                    android:text="2000"
                     />
                 <Button
                     android:layout_width="wrap_content"
@@ -512,172 +678,6 @@
                         android:text="Time result"
                         android:textSize="12dp"
                         android:id="@+id/cTimeResult3"
-                        android:minWidth="100dp"
-                        android:textAlignment="textEnd"
-                        android:layout_marginLeft="30dp"
-                        />
-                </LinearLayout>
-            </LinearLayout>
-
-            //Memory Allocation knappar
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="MemoryAllocation"
-                    android:textSize="20dp"
-                    android:textIsSelectable="false"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:textAlignment="center"
-                    android:minWidth="60dp" />
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/numRuns4"
-                    android:layout_marginTop="10dp"
-                    android:inputType="number"
-                    android:text="100"
-                    />
-                <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/n4"
-                    android:layout_marginTop="10dp"
-                    android:inputType="number"
-                    android:text="36"
-                    />
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Calc"
-                    android:id="@+id/button4"
-                    android:layout_marginTop="10dp"
-                    android:onClick="onClickCalcBtn4"
-                    />
-
-            </LinearLayout>
-
-            //Memory Allocation resultat
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Java"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:layout_marginLeft="30dp"
-                        android:textAlignment="center"
-                        android:minWidth="60dp" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Calc result"
-                        android:id="@+id/javaResult4"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:minWidth="100dp"
-                        android:textAlignment="textEnd"
-                        android:layout_marginLeft="30dp"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Time result"
-                        android:textSize="12dp"
-                        android:id="@+id/javaTimeResult4"
-                        android:minWidth="100dp"
-                        android:textAlignment="textEnd"
-                        android:layout_marginLeft="30dp"
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Go"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:layout_marginLeft="30dp"
-                        android:textAlignment="center"
-                        android:minWidth="60dp" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Calc result"
-                        android:id="@+id/goResult4"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:minWidth="100dp"
-                        android:textAlignment="textEnd"
-                        android:layout_marginLeft="30dp"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Time result"
-                        android:textSize="12dp"
-                        android:id="@+id/goTimeResult4"
-                        android:minWidth="100dp"
-                        android:textAlignment="textEnd"
-                        android:layout_marginLeft="30dp"
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="C"
-                        android:textSize="12dp"
-                        android:textAlignment="center"
-                        android:textIsSelectable="false"
-                        android:layout_marginLeft="30dp"
-                        android:minWidth="60dp" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Calc result"
-                        android:id="@+id/cResult4"
-                        android:textSize="12dp"
-                        android:textIsSelectable="false"
-                        android:minWidth="100dp"
-                        android:textAlignment="textEnd"
-                        android:layout_marginLeft="30dp"
-                        />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceLarge"
-                        android:text="Time result"
-                        android:textSize="12dp"
-                        android:id="@+id/cTimeResult4"
                         android:minWidth="100dp"
                         android:textAlignment="textEnd"
                         android:layout_marginLeft="30dp"

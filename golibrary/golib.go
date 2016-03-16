@@ -1,7 +1,7 @@
 // Guide: http://www.sajalkayan.com/post/android-apps-golang.html
 // Build-kommando: gomobile bind -o ../../../trash/Androidgotest/app/libs/androidtest.aar .
 
-package androidtest
+package golib
 
 func IntegerFibonacci(n int) int {
 	// var result int = 0
@@ -55,7 +55,10 @@ func BubbleSort(n int) int {
 
 func MemoryAllocation(n int) int {
 	size := 4000 * n
-	s := make([]byte, size)
+	array := make([]byte, size)
 
-	return len(s)
+	for i := 0; i < n; i++ {
+		array[i] = 127
+	}
+	return array[n-1]
 }
